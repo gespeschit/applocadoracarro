@@ -14,8 +14,9 @@ class CreateClientesTable extends Migration
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id()->comment('Código de identificação única do registro');
+            $table->string('nome', 30)->comment('Nome do cliente');
+            $table->timestamps()->comment('Data e hora de criação ou alteração de registro.');
         });
     }
 
