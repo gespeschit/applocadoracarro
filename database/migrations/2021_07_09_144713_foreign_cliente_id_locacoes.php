@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClientesTable extends Migration
+class ForeignClienteIdLocacoes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateClientesTable extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
-            $table->id()->comment('Código de identificação única do registro');
-            $table->string('nome', 30)->comment('Nome do cliente');
-            $table->timestamps();
+        Schema::table('locacoes', function (Blueprint $table) {
+
+            //foreign key (constraints)
+            $table->foreign('cliente_id')->references('id')->on('clientes');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateClientesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientes');
+        //
     }
 }

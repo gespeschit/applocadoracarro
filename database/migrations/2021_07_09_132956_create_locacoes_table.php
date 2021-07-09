@@ -26,10 +26,10 @@ public function up()
         $table->float('valor_diaria', 8,2)->comment('Valor da diária');
         $table->integer('km_inicial')->comment('Quilometragem inicial');
         $table->integer('km_final')->comment('Quilometragem final');
-        $table->timestamps()->comment('Data e hora de criação e alteração de registros');
+        $table->timestamps();
 
         //foreign key (constraints)
-        $table->foreign('cliente_id')->references('id')->on('clientes');
+        //$table->foreign('cliente_id')->references('id')->on('clientes');
         $table->foreign('carro_id')->references('id')->on('carros');
     });
 }
