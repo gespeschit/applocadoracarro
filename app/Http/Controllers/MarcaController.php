@@ -56,7 +56,7 @@ class MarcaController extends Controller
     {
         $marca = $this->marca->find($id);
         if($marca === null){
-            return ['erro' => 'Recurso pesquisado não existe.'];
+            return response()->json(['erro' => 'Recurso pesquisado não existe.'],404);
         }
         return $marca;
     }
@@ -89,7 +89,7 @@ class MarcaController extends Controller
         //$marca->update($request->all());
         $marca = $this->marca->find($id);
         if($marca === null){
-            return ['erro' => 'Impossível atualizar. Recurso pesquisado não existe.'];
+            return response()->json(['erro' => 'Impossível atualizar. Recurso pesquisado não existe.'],404);
         }
         $marca->update($request->all());
         return $marca;
@@ -108,7 +108,7 @@ class MarcaController extends Controller
         */
         $marca = $this->marca->find($id);
         if($marca === null){
-            return ['erro' => 'Impossível excluir. Recurso pesquisado não existe.'];
+            return response()->json(['erro' => 'Impossível excluir. Recurso pesquisado não existe.'],404);
         }
         $marca->delete();
         return ['msg' => 'Registro excluído com sucesso!'];
