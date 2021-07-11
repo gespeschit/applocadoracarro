@@ -1,6 +1,6 @@
 ## Locadora de Carro
 
-Este sitema utilizando-se da 
+Sistema utilizando o framework Laravel com ambinete de desenvolvimento criado Laradock (Docker).
 
 ### LARADOCK
 
