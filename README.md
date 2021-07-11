@@ -1,4 +1,4 @@
-## Locadora de Carro
+# Locadora de Carro
 
 Sistema utilizando o framework Laravel com ambinete de desenvolvimento criado Laradock (Docker).
 
@@ -55,11 +55,17 @@ docker-compose up -d --buid ngnix mysql phpmyadmin redis
 ## Rotas
 
 Marcas
-Verbo                   URN
-GET|HEAD  =>  api/marca 
-POST           => api/marca
-GET|HEAD  => api/marca/{marca}
-PUT|PATCH => api/marca/{marca} 
-DELETE       => api/marca/{marca}
+|Verbo|URN|
+|----------|:-------------:|
+|GET/HEAD  |  api/marca |
+|----------|:-------------:|
+|POST      |    api/marca |
+|----------|:-------------:|
+| GET/HEAD | api/marca/{marca}|
+|----------|:-------------:|
+| PUT/PATCH | api/marca/{marca} |
+|----------|:-------------:|
+|DELETE    | api/marca/{marca}|
+|----------|:-------------:|
 
 
