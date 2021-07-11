@@ -56,16 +56,11 @@ docker-compose up -d --buid ngnix mysql phpmyadmin redis
 
 Marcas
 |Verbo|URN|
-|----------|:-------------:|
 |GET/HEAD  |  api/marca |
-|----------|:-------------:|
 |POST      |    api/marca |
-|----------|:-------------:|
 | GET/HEAD | api/marca/{marca}|
-|----------|:-------------:|
 | PUT/PATCH | api/marca/{marca} |
-|----------|:-------------:|
 |DELETE    | api/marca/{marca}|
-|----------|:-------------:|
+
 
 
