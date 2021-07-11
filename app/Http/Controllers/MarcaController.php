@@ -20,7 +20,7 @@ class MarcaController extends Controller
     {
         //$marcas = Marca::all();
         $marcas = $this->marca->all();
-        return $marcas;
+        return response()->json($marcas,200);
     }
 
     /**
@@ -42,8 +42,9 @@ class MarcaController extends Controller
     public function store(Request $request)
     {
         //$marca = Marca::create($request->all());
+        $request->validate($this->marca->rules(),$this->marca->feedback());
         $marca = $this->marca->create($request->all());
-        return $marca;
+        return response()->json($marca,201);
     }
 
     /**
@@ -58,7 +59,7 @@ class MarcaController extends Controller
         if($marca === null){
             return response()->json(['erro' => 'Recurso pesquisado não existe.'],404);
         }
-        return $marca;
+        return response()->json($marca,200);
     }
 
     /**
@@ -91,8 +92,9 @@ class MarcaController extends Controller
         if($marca === null){
             return response()->json(['erro' => 'Impossível atualizar. Recurso pesquisado não existe.'],404);
         }
+        $request->validate($marca->rules(),$marca->feedback());
         $marca->update($request->all());
-        return $marca;
+        return response()->json($marca,200);
     }
 
     /**
@@ -111,6 +113,6 @@ class MarcaController extends Controller
             return response()->json(['erro' => 'Impossível excluir. Recurso pesquisado não existe.'],404);
         }
         $marca->delete();
-        return ['msg' => 'Registro excluído com sucesso!'];
+        return response()->json(['msg' => 'Registro excluído com sucesso!'],200);
     }
 }
